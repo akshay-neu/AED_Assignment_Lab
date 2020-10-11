@@ -1,0 +1,13 @@
+To model a ride from location A (source) to location B (destination) and Current location of vehicle -
+
+JxMaps library can be used for this. 
+It has Swing component which can be simply embedded to JPanel.
+
+void createMapView(JPanel parent) {
+    MapView view = new MapView();
+    parent.add(view);
+}
+
+This library has comprehensive set of classes for working with Google Maps from java.
+
+The current location can be taken from GPS using Google Maps, or from the value of latitude-longitude provided.
