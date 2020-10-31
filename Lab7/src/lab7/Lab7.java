@@ -86,8 +86,8 @@ public class Lab7 {
         
         helper.avgLikesPerComment();
         helper.postWithMostLikes();
-//        helper.postWithMostComments();
-  //      helper.topInactiveWithTotalPost();
+        helper.postWithMostComments();
+        helper.topInactiveWithTotalPost();
     //    helper.inactiveUsersWithLeastComment();
       //  helper.top5InactiveUsersOverall();
         //helper.top5ProactiveUsersOverall();
