@@ -17,7 +17,7 @@ public class MainFrame extends javax.swing.JFrame {
 
     /**
      * Creates new form MainFrame
-     */
+     **/
     
     private Admin adminUser;
     public MainFrame() {
@@ -121,7 +121,7 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void btnCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCustomerActionPerformed
         // TODO add your handling code here:
-
+       
         String abc = "abc";
         CardLayout layout = (CardLayout)panelRight.getLayout();
         panelRight.add(new LoginScreen(panelRight, adminUser.getCustDir().getCustomerList()));
