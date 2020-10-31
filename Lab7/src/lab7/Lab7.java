@@ -88,8 +88,8 @@ public class Lab7 {
         helper.postWithMostLikes();
         helper.postWithMostComments();
         helper.topInactiveWithTotalPost();
-    //    helper.inactiveUsersWithLeastComment();
-      //  helper.top5InactiveUsersOverall();
-        //helper.top5ProactiveUsersOverall();
+        helper.inactiveUsersWithLeastComment();
+        helper.top5InactiveUsersOverall();
+        helper.top5ProactiveUsersOverall();
     }
 }

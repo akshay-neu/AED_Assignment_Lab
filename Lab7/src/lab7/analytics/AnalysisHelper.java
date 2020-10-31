@@ -151,6 +151,103 @@ public class AnalysisHelper {
         System.out.println(" ");
      
     }
+        
+    //5 - top 5 inactive Users With Least Comment
+    public void inactiveUsersWithLeastComment() {
+        Map<Integer, Integer> userCommentcount = new HashMap<Integer, Integer>();
+        Map<Integer, User> userMap = DataStore.getInstance().getUsers();
+
+        List<User> userList = new ArrayList(userMap.values());
+        Collections.sort(userList, new Comparator<User>() {
+            @Override
+            public int compare(User u1, User u2) {
+                //so as to get descending list
+                return u1.getComments().size() - u2.getComments().size();
+            }
+        });
+        System.out.println(" ");
+        System.out.println("*******");
+        System.out.println(" ");
+        System.out.println("5. The 5 most inactive Users based on comments:");
+        for (int i = 0; i < userList.size() && i < 5; i++) {
+            System.out.println("User ID:" + userList.get(i).getId());
+        }
+    }
+
+    //6 - top 5 Inactive Users Overall (sum of comments, post and likes)
+    public void top5InactiveUsersOverall() {
+        Map<Integer, User> userMap = DataStore.getInstance().getUsers();
+        Map<Integer, Post> posts = DataStore.getInstance().getPosts();
+        Map<Integer, Integer> newUserMap = new HashMap<>();
+        for (User user : userMap.values()) {
+            newUserMap.put(user.getId(), user.getComments().size());
+            for (Comment comment : user.getComments()) {
+                newUserMap.put(user.getId(), newUserMap.get(user.getId()) + comment.getLikes());
+            }
+
+            for (Post post : posts.values()) {
+                newUserMap.put(post.getUserId(), (post.getUserId()) + 1);
+            }
+            List<Map.Entry<Integer, Integer>> list = new LinkedList<>(newUserMap.entrySet());
+            Collections.sort(list, new Comparator<Map.Entry<Integer, Integer>>() {
+                public int compare(Map.Entry<Integer, Integer> o1, Map.Entry<Integer, Integer> o2) {
+                    return (o1.getValue()).compareTo(o2.getValue());
+                }
+            });
+            HashMap<Integer, Integer> temp = new LinkedHashMap<>();
+            for (Map.Entry<Integer, Integer> aa : list) {
+                temp.put(aa.getKey(), aa.getValue());
+            }
+            System.out.println(" ");
+            System.out.println("*******");
+            System.out.println("\n6. Top 5 inactive users on the basis of posts, likes and comments:");
+            int count = 0;
+            for (Map.Entry<Integer, Integer> entry : temp.entrySet()) {
+                if (count >= 5) {
+                    return;
+                }
+                System.out.println("User Id = " + entry.getKey() + " , Total contribution = " + entry.getValue());
+                count++;
+            }
+        }
+    }
+
+    //7 - top 5 Proactive Users Overall (sum of comments, post and likes)
+    public void top5ProactiveUsersOverall() {
+        Map<Integer, User> userMap = DataStore.getInstance().getUsers();
+        Map<Integer, Post> posts = DataStore.getInstance().getPosts();
+        Map<Integer, Integer> newUserMap = new HashMap<>();
+        for (User user : userMap.values()) {
+            newUserMap.put(user.getId(), user.getComments().size());
+            for (Comment comment : user.getComments()) {
+                newUserMap.put(user.getId(), newUserMap.get(user.getId()) + comment.getLikes());
+            }
+        }
+        for (Post post : posts.values()) {
+            newUserMap.put(post.getUserId(), (post.getUserId()) + 1);
+        }
+        List<Map.Entry<Integer, Integer>> list = new LinkedList<>(newUserMap.entrySet());
+        Collections.sort(list, new Comparator<Map.Entry<Integer, Integer>>() {
+            public int compare(Map.Entry<Integer, Integer> o1, Map.Entry<Integer, Integer> o2) {
+                return o2.getValue() - o1.getValue();
+            }
+        });
+        HashMap<Integer, Integer> temp = new LinkedHashMap<>();
+        for (Map.Entry<Integer, Integer> aa : list) {
+            temp.put(aa.getKey(), aa.getValue());
+        }
+        System.out.println(" ");
+        System.out.println("*******");
+        System.out.println("\n7. Top 5 proactive users by posts, comments and likes:");
+        int count = 0;
+        for (Map.Entry<Integer, Integer> entry : temp.entrySet()) {
+            if (count >= 5) {
+                return;
+            }
+            System.out.println("User Id = " + entry.getKey() + " , Total contribution = " + entry.getValue());
+            count++;
+        }
+    }
      
     
 
