@@ -84,7 +84,73 @@ public class AnalysisHelper {
        }
     }
             
+    //3 - post With Most Comments
+    public void postWithMostComments() {
+        
+     Map<Integer , Integer> noofcomments = new HashMap<Integer , Integer>();
+ 
+     System.out.println("*******");
+     System.out.println("\n3. Post with Most Number of Comments:");
+     
+     for (Post post : DataStore.getInstance().getPosts().values()) {
+         noofcomments.put(post.getPostId(), post.getComments().size());
+     }
+     
+     int keyPost = Collections.max(noofcomments.entrySet(), Comparator.comparingInt(Map.Entry::getValue)).getKey();
+     int commentPost = noofcomments.get(keyPost);
+     
+     for (Map.Entry<Integer , Integer> entry : noofcomments.entrySet()) {
+         
+         if (entry.getValue() == commentPost ) {
+         //System.out.println("3. Posts with Most Number of Comments: ");    
+         System.out.println("Post ID :  "+ entry.getKey() + " , Total number of comments : " + entry.getValue());
+         //System.out.println(" ");
+         }
+     
+     
+     }
+     
+     }
     
+    //4 - top 5 inactive users with total post
+        public void topInactiveWithTotalPost() {
+        
+        System.out.println(" ");
+        System.out.println("*******");    
+        System.out.println("\n4. Top 5 Inactive Users with total number of posts:");
+        // System.out.println("\n4 :");
+    
+    Map<Integer, Post> posts =  DataStore.getInstance().getPosts() ;
+    Map<Integer, User> user =  DataStore.getInstance().getUsers() ;
+     Map<Integer , Integer> noOfPosts = new HashMap<>();
+    
+    for (Post post : posts.values()) {
+        
+        if (noOfPosts.containsKey(post.getUserId())) {
+        
+        noOfPosts.replace(post.getUserId(), noOfPosts.get(post.getUserId()) + 1) ;
+        }
+        else {
+             noOfPosts.put(post.getUserId(),1);
+        }
+    }          
+          Map<Integer, Integer> result1 = noOfPosts.entrySet().stream()
+                .sorted(Map.Entry.comparingByValue(Comparator.naturalOrder()))
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
+                        (oldValue, newValue) -> oldValue, LinkedHashMap::new));
+          
+   int count  = 0 ; 
+    for (Map.Entry<Integer, Integer> entry : result1.entrySet()) {
+           if (count >= 5) {
+               return;
+           }
+           
+           System.out.println("User Id = " + entry.getKey() + " , Total Post = " + entry.getValue());
+           count++;
+       }
+        System.out.println(" ");
+     
+    }
      
     
 
