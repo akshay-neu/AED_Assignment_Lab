@@ -13,17 +13,48 @@ import Business.Role.Role;
 import Business.Role.SystemAdminRole;
 import java.util.ArrayList;
 
-/**
- *
- * @author MyPC1
- */
 public class EcoSystem extends Organization{
     
     private static EcoSystem business;
     private RestaurantDirectory restaurantDirectory;
     private CustomerDirectory customerDirectory;
+
+    public CustomerDirectory getCustomerDirectory() {
+        if(customerDirectory == null)
+        {
+            customerDirectory = new CustomerDirectory();
+        }
+        return customerDirectory;
+    }
+
+    public void setCustomerDirectory(CustomerDirectory customerDirectory) {
+        this.customerDirectory = customerDirectory;
+    }
+
+    public DeliveryManDirectory getDeliveryManDirectory() {
+        if(deliveryManDirectory == null)
+        {
+            deliveryManDirectory = new DeliveryManDirectory();
+        }
+        return deliveryManDirectory;
+    }
+
+    public void setDeliveryManDirectory(DeliveryManDirectory deliveryManDirectory) {
+        this.deliveryManDirectory = deliveryManDirectory;
+    }
     private DeliveryManDirectory deliveryManDirectory;
 
+    public RestaurantDirectory getRestaurantDirectory() {
+        if(restaurantDirectory == null)
+        {
+            restaurantDirectory = new RestaurantDirectory();
+        }
+        return restaurantDirectory;
+    }
+
+    public void setRestaurantDirectory(RestaurantDirectory restaurantDirectory) {
+        this.restaurantDirectory = restaurantDirectory;
+    }
     public EcoSystem(RestaurantDirectory restaurantDirectory, CustomerDirectory customerDirectory, DeliveryManDirectory deliveryManDirectory) {
 
         this.restaurantDirectory = restaurantDirectory;
@@ -46,7 +77,6 @@ public class EcoSystem extends Organization{
     }
     private EcoSystem(){
         super(null);
-       // networkList=new ArrayList<Network>();
     }
 
     
