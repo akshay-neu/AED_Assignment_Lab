@@ -18,10 +18,7 @@ import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 import userinterface.RestaurantAdminRole.ManageMenu;
 
-/**
- *
- * @author monal
- */
+
 public class CustomerAreaJPanel extends javax.swing.JPanel {
 
     private JPanel userProcessContainer;
@@ -95,7 +92,7 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
                 {null, null, null}
             },
             new String [] {
-                "Restaurent Name", "Address", "Number"
+                "Restaurent Name", "Address", "Id"
             }
         ) {
             Class[] types = new Class [] {

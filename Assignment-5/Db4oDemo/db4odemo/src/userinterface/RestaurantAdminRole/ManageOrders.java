@@ -7,7 +7,7 @@ package userinterface.RestaurantAdminRole;
 
 import Business.EcoSystem;
 import Business.Order.Order;
-import Business.Restaurant.Dishes;
+import Business.Restaurant.FoodItems;
 import Business.Restaurant.Restaurant;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
@@ -16,10 +16,7 @@ import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 import userinterface.CustomerRole.MenuPanel;
 
-/**
- *
- * @author monal
- */
+
 public class ManageOrders extends javax.swing.JPanel {
 
     /**

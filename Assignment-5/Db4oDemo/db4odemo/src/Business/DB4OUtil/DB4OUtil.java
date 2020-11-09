@@ -9,11 +9,7 @@ import com.db4o.config.EmbeddedConfiguration;
 import com.db4o.ta.TransparentPersistenceSupport;
 import java.nio.file.Paths;
 
-/**
- *
- * @author rrheg
- * @author Lingfeng
- */
+
 public class DB4OUtil {
 
     private static final String FILENAME = Paths.get("Databank.db4o").toAbsolutePath().toString();// path to the data store
@@ -41,7 +37,6 @@ public class DB4OUtil {
             config.common().activationDepth(Integer.MAX_VALUE);
             //Controls the depth/level of updation of Object
             config.common().updateDepth(Integer.MAX_VALUE);
-
             //Register your top most Class here
             config.common().objectClass(EcoSystem.class).cascadeOnUpdate(true); // Change to the object you want to save
 

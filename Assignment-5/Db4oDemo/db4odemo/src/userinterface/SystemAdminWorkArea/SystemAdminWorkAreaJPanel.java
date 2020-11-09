@@ -5,9 +5,12 @@
  */
 package userinterface.SystemAdminWorkArea;
 
+import Business.Customer.Customer;
+import Business.DeliveryMan.DeliveryMan;
 import Business.EcoSystem;
 
 import Business.Organization;
+import Business.Restaurant.Restaurant;
 import java.awt.CardLayout;
 import java.util.ArrayList;
 import javax.swing.JPanel;
@@ -16,7 +19,7 @@ import javax.swing.tree.DefaultTreeModel;
 
 /**
  *
- * @author akshay
+ * @author Akshay
  */
 public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
 
@@ -35,9 +38,47 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
     public void populateTree(){
         DefaultTreeModel model=(DefaultTreeModel)jTree.getModel();
        // Add the code for draw your system structure shown by JTree
-       
+        DefaultMutableTreeNode custDirNode = new DefaultMutableTreeNode("Customer Directory");
+        DefaultMutableTreeNode restDirNode = new DefaultMutableTreeNode("Restaurant Directory");
+        DefaultMutableTreeNode deliveryManDirNode = new DefaultMutableTreeNode("DeliveryMan Directory");
+        DefaultMutableTreeNode root=(DefaultMutableTreeNode)model.getRoot();
+        
+        root.removeAllChildren();
+        root.insert(custDirNode, 0);
+        root.insert(restDirNode, 0);
+        root.insert(deliveryManDirNode, 0);
+        
+        ArrayList<Customer> custList = ecosystem.getCustomerDirectory().getCustList();
+        ArrayList<Restaurant> restList = ecosystem.getRestaurantDirectory().getRestaurantList();
+        ArrayList<DeliveryMan> deliveryManList = ecosystem.getDeliveryManDirectory().getDeliveryManList();
+        
+        DefaultMutableTreeNode customerNode;
+        DefaultMutableTreeNode restaurantNode;
+        DefaultMutableTreeNode deliveryManNode;
+        
+        int custIndex = -1;
+        int restIndex = -1;
+        int delManIndex = -1;
+        for(Customer cust : custList){
+            custIndex++;
+            customerNode=new DefaultMutableTreeNode(cust.getName());
+            custDirNode.insert(customerNode, custIndex);
+        }
+        
+        for(Restaurant rest : restList){
+            restIndex++;
+            restaurantNode=new DefaultMutableTreeNode(rest.getName());
+            restDirNode.insert(restaurantNode, restIndex);
+        }
+        
+        for(DeliveryMan delMan : deliveryManList){
+            delManIndex++;
+            deliveryManNode=new DefaultMutableTreeNode(delMan.getName());
+            deliveryManDirNode.insert(deliveryManNode, delManIndex);
+        }
         model.reload();
     }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -60,7 +101,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
 
         setLayout(new java.awt.BorderLayout());
 
-        jPanel1.setBackground(new java.awt.Color(0, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
 
         jTree.addTreeSelectionListener(new javax.swing.event.TreeSelectionListener() {
             public void valueChanged(javax.swing.event.TreeSelectionEvent evt) {
@@ -169,8 +210,8 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnManageCustomersActionPerformed
 
     private void btnManageRestaurmentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageRestaurmentsActionPerformed
-        ManageRestaurantsJPanel manageEnterpriseJPanel=new ManageRestaurantsJPanel(userProcessContainer, ecosystem);
-        userProcessContainer.add("Manage Restaurents",manageEnterpriseJPanel);
+        ManageRestaurantScreenJPanel manageEnterpriseJPanel=new ManageRestaurantScreenJPanel(userProcessContainer, ecosystem);
+        userProcessContainer.add("ManageRestaurantScreenJPanel",manageEnterpriseJPanel);
         CardLayout layout=(CardLayout)userProcessContainer.getLayout();
         layout.next(userProcessContainer);
     }//GEN-LAST:event_btnManageRestaurmentsActionPerformed

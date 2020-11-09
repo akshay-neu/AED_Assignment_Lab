@@ -13,10 +13,7 @@ import java.awt.Component;
 import javax.swing.JPanel;
 import userinterface.SystemAdminWorkArea.SystemAdminWorkAreaJPanel;
 
-/**
- *
- * @author monal
- */
+
 public class ManageInfo extends javax.swing.JPanel {
 
     /**
@@ -69,6 +66,7 @@ public class ManageInfo extends javax.swing.JPanel {
         backBtn = new javax.swing.JButton();
         SaveBtn = new javax.swing.JButton();
         UpdateBtn = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(204, 204, 204));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -120,6 +118,9 @@ public class ManageInfo extends javax.swing.JPanel {
             }
         });
         add(UpdateBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 240, 100, -1));
+
+        jLabel1.setText("Managing Restaurant Details");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 30, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void numTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numTxtActionPerformed
@@ -182,6 +183,7 @@ public class ManageInfo extends javax.swing.JPanel {
     private javax.swing.JButton UpdateBtn;
     private javax.swing.JTextField addressTxt;
     private javax.swing.JButton backBtn;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

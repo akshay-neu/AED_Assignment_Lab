@@ -6,7 +6,7 @@
 package userinterface.RestaurantAdminRole;
 
 import Business.EcoSystem;
-import Business.Restaurant.Dishes;
+import Business.Restaurant.FoodItems;
 import Business.Restaurant.Restaurant;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
@@ -16,17 +16,14 @@ import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 import userinterface.SystemAdminWorkArea.SystemAdminWorkAreaJPanel;
 
-/**
- *
- * @author monal
- */
+
 public class ManageMenu extends javax.swing.JPanel {
 
     /**
      * Creates new form ManageMenu
      */
      EcoSystem system;
-     Dishes menu;
+     FoodItems menu;
     JPanel userProcessContainer;
     UserAccount account;
     public ManageMenu(JPanel userProcessContainer,UserAccount account, EcoSystem system) {
@@ -79,7 +76,7 @@ public class ManageMenu extends javax.swing.JPanel {
                 {null, null, null}
             },
             new String [] {
-                "Dish Name", "Description", "Prize"
+                "Item", "Description", "Price"
             }
         ) {
             Class[] types = new Class [] {
@@ -210,7 +207,7 @@ public class ManageMenu extends javax.swing.JPanel {
            
             if (restro.getAdminUName().equals(account.getUsername())) {
                 
-               for(Dishes menu:restro.getMenu()){
+               for(FoodItems menu:restro.getMenu()){
                 Object[] row = new Object[3];
                 row[0] = menu.getName();
                 row[1] = menu.getDescription();

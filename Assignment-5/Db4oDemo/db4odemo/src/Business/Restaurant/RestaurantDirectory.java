@@ -8,57 +8,41 @@ package Business.Restaurant;
 import Business.UserAccount.UserAccount;
 import java.util.ArrayList;
 
-/**
- *
- * @author monal
- */
+
 public class RestaurantDirectory {
     private ArrayList<Restaurant> restaurantList;
     private Restaurant restaurant;
-    private Dishes menu;
+    private FoodItems menu;
     public RestaurantDirectory(){
-        this.restaurantList=new ArrayList<Restaurant>();
-    }
+        this.restaurantList=new ArrayList<Restaurant>();}
 
     public ArrayList<Restaurant> getRestaurantList() {
-        return restaurantList;
-    }
+        return restaurantList;}
 
     public void setRestaurantList(ArrayList<Restaurant> restaurantList) {
-        this.restaurantList = restaurantList;
-    }
+        this.restaurantList = restaurantList;}
     
     public Restaurant createRestaurantInfo(String uName){
         restaurant= new Restaurant(uName);
         restaurantList.add(restaurant);
-        
-        return restaurant;
-    }
+        return restaurant;}
     
     public void deleteRestaurent(String username){
         for(int i=0;i<restaurantList.size();i++){
             if(restaurantList.get(i).getAdminUName().equals(username)){
-                restaurantList.remove(i);
-            }
-        }
-    }
+                restaurantList.remove(i); }}}
     
     public void updateRestaurantInfo(Restaurant restro,String name,String number,String address){
         restro.setName(name);
         restro.setAddress(address);
-        restro.setNumber(number);
-    }
+        restro.setNumber(number);}
     
-    public Dishes AddMenuDishes(Restaurant restro,String name,String desc,String amount){
-        menu=new Dishes(name, desc, amount);
+    public FoodItems AddMenuDishes(Restaurant restro,String name,String desc,String amount){
+        menu=new FoodItems(name, desc, amount);
         restro.addDishes(menu);
-        return menu;
-    }
+        return menu;}
     
-    public void DeleteDishes(Restaurant restro,Dishes menu){
-        restro.removeDishes(menu);
-        
-    }
-    
+    public void DeleteDishes(Restaurant restro,FoodItems menu){
+        restro.removeDishes(menu);}
     
  }

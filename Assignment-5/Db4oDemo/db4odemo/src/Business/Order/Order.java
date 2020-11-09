@@ -5,90 +5,53 @@
  */
 package Business.Order;
 
-import Business.Restaurant.Dishes;
+import Business.Restaurant.FoodItems;
 import java.util.ArrayList;
 
-/**
- *
- * @author monal
- */
+
 public class Order {
     private String order_id;
-
-    public String getOrder_id() {
-        return order_id;
-    }
-
-    public void setOrder_id(String order_id) {
-        this.order_id = order_id;
-    }
     private String restaurentName;
     private String customerName;
     private String deliverMan;
-    private ArrayList<Dishes> Order;
+    private ArrayList<FoodItems> Order;
     private String cost;
     private String status;
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-   
     private String deliveryAddress;
     
-    
-
+    public String getOrder_id() {
+        return order_id;}
+    public void setOrder_id(String order_id) {
+        this.order_id = order_id;}
+    public String getStatus() {
+        return status;}
+    public void setStatus(String status) {
+        this.status = status;}
     public String getRestaurentName() {
-        return restaurentName;
-    }
-
+        return restaurentName;}
     public void setRestaurentName(String restaurentName) {
-        this.restaurentName = restaurentName;
-    }
-
+        this.restaurentName = restaurentName;}
     public String getCustomerName() {
-        return customerName;
-    }
-
+        return customerName;}
     public void setCustomerName(String customerName) {
-        this.customerName = customerName;
-    }
-
+        this.customerName = customerName;}
     public String getDeliverMan() {
-        return deliverMan;
-    }
-
+        return deliverMan;}
     public void setDeliverMan(String deliverMan) {
-        this.deliverMan = deliverMan;
-    }
-
-    public ArrayList<Dishes> getOrder() {
-        return Order;
-    }
-
-    public void setOrder(ArrayList<Dishes> Order) {
-        this.Order = Order;
-    }
-
+        this.deliverMan = deliverMan;}
+    public ArrayList<FoodItems> getOrder() {
+        return Order;}
+    public void setOrder(ArrayList<FoodItems> Order) {
+        this.Order = Order;}
     public String getCost() {
-        return cost;
-    }
-
+        return cost;}
     public void setCost(String cost) {
-        this.cost = cost;
-    }
-
+        this.cost = cost;}
     public String getDeliveryAddress() {
-        return deliveryAddress;
-    }
-
+        return deliveryAddress;}
     public void setDeliveryAddress(String deliveryAddress) {
-        this.deliveryAddress = deliveryAddress;
-    }
+        this.deliveryAddress = deliveryAddress;}
+    
     @Override
     public String toString() {
         return order_id;

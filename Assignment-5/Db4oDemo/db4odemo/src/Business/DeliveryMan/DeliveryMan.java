@@ -6,20 +6,16 @@
 package Business.DeliveryMan;
 
 import Business.Order.Order;
-import Business.Restaurant.Dishes;
+import Business.Restaurant.FoodItems;
 import java.util.ArrayList;
 
-/**
- *
- * @author monal
- */
+
 public class DeliveryMan {
      private String Name;
      private String UserName;
      private ArrayList<Order> orderList;
-     public void addOrder(String restaurentName, String customerName, String deliverMan, ArrayList<Dishes> Order, String cost, String deliveryAddress) {
+     public void addOrder(String restaurentName, String customerName, String deliverMan, ArrayList<FoodItems> Order, String cost, String deliveryAddress) {
         Order order=new Order();
-        //order.setOrder_id(String.valueOf(id));
         order.setCustomerName(customerName);
         order.setRestaurentName(restaurentName);
         order.setDeliverMan(deliverMan);

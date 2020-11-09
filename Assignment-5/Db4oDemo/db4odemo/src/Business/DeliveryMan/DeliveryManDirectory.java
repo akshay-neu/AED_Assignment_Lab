@@ -8,10 +8,7 @@ package Business.DeliveryMan;
 
 import java.util.ArrayList;
 
-/**
- *
- * @author monal
- */
+
 public class DeliveryManDirectory {
     
     private ArrayList<DeliveryMan> deliveryManList;
@@ -37,19 +34,11 @@ public class DeliveryManDirectory {
     public void setDeliveryMan(DeliveryMan deliveryMan) {
         this.deliveryMan = deliveryMan;
     }
-   
-    
-    
-    
-    
-    
-    
     public DeliveryMan createDeliveryMan(String uName){
         deliveryMan= new DeliveryMan(uName);
         deliveryManList.add(deliveryMan);
         return deliveryMan;
     }
-    
     public void deleteDeliveryMan(String username){
          for(int i=0;i<deliveryManList.size();i++){
             if(deliveryManList.get(i).getUserName().equals(username)){
