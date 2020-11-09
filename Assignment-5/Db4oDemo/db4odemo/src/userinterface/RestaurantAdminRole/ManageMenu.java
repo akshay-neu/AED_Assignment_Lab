@@ -54,6 +54,7 @@ public class ManageMenu extends javax.swing.JPanel {
         deleteBtn = new javax.swing.JButton();
         backBtn = new javax.swing.JButton();
         addDishBtn = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(204, 204, 204));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -70,10 +71,7 @@ public class ManageMenu extends javax.swing.JPanel {
 
         MenuTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+
             },
             new String [] {
                 "Item", "Description", "Price"
@@ -141,6 +139,9 @@ public class ManageMenu extends javax.swing.JPanel {
             }
         });
         add(addDishBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 430, -1, -1));
+
+        jLabel4.setText("Manage Menu");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 40, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void amtTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_amtTxtActionPerformed
@@ -164,9 +165,17 @@ public class ManageMenu extends javax.swing.JPanel {
         for(Restaurant restro:system.getRestaurantDirectory().getRestaurantList()){
            if(restro.getAdminUName().equals(account.getUsername())){
                 menu=system.getRestaurantDirectory().AddMenuDishes(restro,name, desc, amount);
-            }   
+                //System.out.println("dish added");
+                
+                
+           }   
+           else{
+           //System.out.println("dish not added");
+           }
+           // menu=system.getRestaurantDirectory().AddMenuDishes(restro,name, desc, amount);
         }
         populateTable();
+        
         
     }//GEN-LAST:event_addDishBtnActionPerformed
 
@@ -231,6 +240,7 @@ public class ManageMenu extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

@@ -42,22 +42,14 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
     public void populateTable(){
          DefaultTableModel model = (DefaultTableModel) restaurentTable.getModel();
         
-        model.setRowCount(0);
-         
-       
+                model.setRowCount(0);
                 Object[] row = new Object[3];
-                //System.out.println();
                 for(Restaurant restro:system.getRestaurantDirectory().getRestaurantList()){
                      row[0] = restro;
-                     //System.out.println(restro.getAdminUName());
                      row[1] = restro.getAddress();
                      row[2] = restro.getNumber();
                      model.addRow(row);
-                }
-            
-            
-        
-        
+                }        
     }
 
     
@@ -86,10 +78,7 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
 
         restaurentTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+
             },
             new String [] {
                 "Restaurent Name", "Address", "Id"
@@ -148,15 +137,12 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
         add(valueLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 90, 150, 26));
 
         valueLabel2.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
-        valueLabel2.setText("Your Past Orders");
+        valueLabel2.setText("Previous Orders");
         add(valueLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 300, 158, 26));
 
         pastTbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
                 "Order ID", "Restaurent Name", "Amount", "Status"
@@ -185,7 +171,7 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
     private void requestTestJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestTestJButtonActionPerformed
         int selectedRow = restaurentTable.getSelectedRow();
         if(selectedRow<0){
-            JOptionPane.showMessageDialog(null,"Please select a row from the table to view details","Warning",JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null,"First please select a row from the table","Warning",JOptionPane.WARNING_MESSAGE);
         }
         else{
            Restaurant restaurant = (Restaurant)restaurentTable.getValueAt(selectedRow, 0);
@@ -228,8 +214,7 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
           for (Customer cust:system.getCustomerDirectory().getCustList()) {
            
             if (cust.getUserName().equals(account.getUsername())) {
-               // System.out.println(restro.getOrderList());
-               for(Order menu:cust.getOrderList()){
+                for(Order menu:cust.getOrderList()){
                 Object[] row = new Object[4];
                 row[0] = menu;
                 row[1] = menu.getRestaurentName();
@@ -237,12 +222,8 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
                 row[2] = menu.getCost();
                 row[3] = menu.getStatus();
                 model.addRow(row);
-               }
-                
-            }
-            
+               }   
+            }   
         }
-        
-        
     }
 }

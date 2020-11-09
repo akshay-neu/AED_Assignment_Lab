@@ -117,8 +117,8 @@ public class MenuPanel extends javax.swing.JPanel {
         add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 70, 130, -1));
 
         enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        enterpriseLabel.setText("Address:");
-        add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 490, 90, 30));
+        enterpriseLabel.setText("Delivery Address:");
+        add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 490, 190, 30));
 
         cartTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -180,7 +180,7 @@ public class MenuPanel extends javax.swing.JPanel {
 
         add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 130, -1, 100));
 
-        orderBtn1.setText("Order");
+        orderBtn1.setText("Place Order");
         orderBtn1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 orderBtn1ActionPerformed(evt);
@@ -188,13 +188,13 @@ public class MenuPanel extends javax.swing.JPanel {
         });
         add(orderBtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 490, -1, -1));
 
-        RemoveBtn.setText("Remove From Order");
+        RemoveBtn.setText("Delete");
         RemoveBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 RemoveBtnActionPerformed(evt);
             }
         });
-        add(RemoveBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 430, -1, -1));
+        add(RemoveBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 430, -1, -1));
         add(addressTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 490, 170, -1));
 
         enterpriseLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -207,7 +207,7 @@ public class MenuPanel extends javax.swing.JPanel {
         
         int selectedRow = menuTable.getSelectedRow();
         if(selectedRow<0){
-            JOptionPane.showMessageDialog(null,"Please select a row from the table to view details","Warning",JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null,"First please select a row!","Warning",JOptionPane.WARNING_MESSAGE);
         }
         else{
             FoodItems item=(FoodItems)menuTable.getValueAt(selectedRow, 0);
@@ -244,13 +244,14 @@ public class MenuPanel extends javax.swing.JPanel {
                 cust.addOrder(restro.getName(), userAccount.getUsername(), null, items, String.valueOf(sum) , address);
             }
         }
+        JOptionPane.showMessageDialog(null," Order placed successfully! ");
     }//GEN-LAST:event_orderBtn1ActionPerformed
 
     private void RemoveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveBtnActionPerformed
         // TODO add your handling code here:
          int selectedRow = cartTable.getSelectedRow();
         if(selectedRow<0){
-            JOptionPane.showMessageDialog(null,"Please select a row from the table to view details","Warning",JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null,"First please select a row!","Warning",JOptionPane.WARNING_MESSAGE);
         }
         else{
             FoodItems item=(FoodItems)cartTable.getValueAt(selectedRow, 0);
