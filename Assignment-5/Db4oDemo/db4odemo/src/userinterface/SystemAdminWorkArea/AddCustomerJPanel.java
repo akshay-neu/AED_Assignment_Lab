@@ -50,6 +50,8 @@ JPanel userProcessContainer;
         nameJTextField = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
 
+        setRequestFocusEnabled(false);
+
         jLabel1.setText("Add a new customer");
 
         submitJButton.setText("Save");

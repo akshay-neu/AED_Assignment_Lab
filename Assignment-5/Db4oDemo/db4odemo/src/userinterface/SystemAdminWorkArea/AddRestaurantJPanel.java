@@ -149,7 +149,7 @@ public class AddRestaurantJPanel extends javax.swing.JPanel {
         Restaurant restro= system.getRestaurantDirectory().createRestaurantInfo(uname);
         //populateNetworkTable();
         
-        JOptionPane.showMessageDialog(null, "Restaurant added successfuly!");
+        JOptionPane.showMessageDialog(null, "A new Restaurant added successfuly!");
         
         nameJTextField.setText("");
         uNameTextField.setText("");

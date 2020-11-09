@@ -7,10 +7,7 @@ package Business.WorkQueue;
 import Business.UserAccount.UserAccount;
 import java.util.Date;
 
-/**
- *
- * @author monal
- */
+
 public abstract class WorkRequest {
 
     private String message;

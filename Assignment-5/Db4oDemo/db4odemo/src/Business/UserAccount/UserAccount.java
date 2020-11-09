@@ -8,70 +8,51 @@ import Business.Employee.Employee;
 import Business.Role.Role;
 import Business.WorkQueue.WorkQueue;
 
-/**
- *
- * @author monal
- */
+
 public class UserAccount {
     
     private String name;
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
     private String username;
     private String password;
     private Employee employee;
     private Role role;
     private WorkQueue workQueue;
+    
+    public String getName() {
+        return name;}
 
+    public void setName(String name) {
+        this.name = name;}
+ 
     public UserAccount() {
-        workQueue = new WorkQueue();
-    }
-    
-    
+        workQueue = new WorkQueue();}
     
     public String getUsername() {
-        return username;
-    }
+        return username;}
 
     public void setUsername(String username) {
-        this.username = username;
-    }
+        this.username = username;}
 
     public String getPassword() {
-        return password;
-    }
+        return password;}
 
     public void setPassword(String password) {
-        this.password = password;
-    }
+        this.password = password;}
 
     public Role getRole() {
-        return role;
-    }
+        return role;}
 
     public void setEmployee(Employee employee) {
-        this.employee = employee;
-    }
+        this.employee = employee;}
 
     public void setRole(Role role) {
-        this.role = role;
-    }
+        this.role = role;}
 
     public Employee getEmployee() {
-        return employee;
-    }
+        return employee;}
 
     public WorkQueue getWorkQueue() {
-        return workQueue;
-    }
-
-    
+        return workQueue;}
     
     @Override
     public String toString() {

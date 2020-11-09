@@ -25,7 +25,7 @@
   <SubComponents>
     <Component class="javax.swing.JButton" name="cardBtn">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Add to Cart"/>
+        <Property name="text" type="java.lang.String" value="Add to Order"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cardBtnActionPerformed"/>
@@ -91,9 +91,9 @@
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
               <Table columnCount="3" rowCount="4">
-                <Column editable="false" title="Dish Name" type="java.lang.String"/>
+                <Column editable="false" title="Item" type="java.lang.String"/>
                 <Column editable="false" title="Description" type="java.lang.String"/>
-                <Column editable="false" title="Amount" type="java.lang.String"/>
+                <Column editable="false" title="Price" type="java.lang.String"/>
               </Table>
             </Property>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -138,9 +138,9 @@
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
               <Table columnCount="3" rowCount="4">
-                <Column editable="false" title="Dish Name" type="java.lang.String"/>
+                <Column editable="false" title="Item" type="java.lang.String"/>
                 <Column editable="false" title="Description" type="java.lang.String"/>
-                <Column editable="false" title="Amount" type="java.lang.String"/>
+                <Column editable="false" title="Price" type="java.lang.String"/>
               </Table>
             </Property>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -184,7 +184,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="RemoveBtn">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Remove From Cart"/>
+        <Property name="text" type="java.lang.String" value="Remove From Order"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RemoveBtnActionPerformed"/>

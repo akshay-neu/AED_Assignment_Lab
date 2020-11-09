@@ -7,7 +7,7 @@ package userinterface.CustomerRole;
 import Business.Customer.Customer;
 import Business.EcoSystem;
 import Business.Organization;
-import Business.Restaurant.Dishes;
+import Business.Restaurant.FoodItems;
 import Business.Restaurant.Restaurant;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.LabTestWorkRequest;
@@ -20,10 +20,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author monal
- */
+
 public class MenuPanel extends javax.swing.JPanel {
 
     private JPanel userProcessContainer;
@@ -31,7 +28,7 @@ public class MenuPanel extends javax.swing.JPanel {
     private UserAccount userAccount;
     Restaurant restro;
     EcoSystem system;
-    ArrayList<Dishes> items=new ArrayList<Dishes>();
+    ArrayList<FoodItems> items=new ArrayList<FoodItems>();
     /**
      * Creates new form RequestLabTestJPanel
      */
@@ -51,7 +48,7 @@ public class MenuPanel extends javax.swing.JPanel {
         
             model.setRowCount(0);
                 Object[] row = new Object[3];
-                for(Dishes dish:restro.getMenu()){
+                for(FoodItems dish:restro.getMenu()){
                      row[0] = dish;
                      row[1] = dish.getDescription();
                      row[2] = dish.getPrice();
@@ -59,13 +56,13 @@ public class MenuPanel extends javax.swing.JPanel {
                 }  
     }
      
-     public void populateCart(Dishes item){
+     public void populateCart(FoodItems item){
         DefaultTableModel model = (DefaultTableModel) cartTable.getModel();
         model.setRowCount(0);
         
          items.add(item);
          Object[] row = new Object[3];
-                for(Dishes dish:items){
+                for(FoodItems dish:items){
                      row[0] = dish;
                      row[1] = dish.getDescription();
                      row[2] = dish.getPrice();
@@ -99,7 +96,7 @@ public class MenuPanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(204, 204, 204));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        cardBtn.setText("Add to Cart");
+        cardBtn.setText("Add to Order");
         cardBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cardBtnActionPerformed(evt);
@@ -131,7 +128,7 @@ public class MenuPanel extends javax.swing.JPanel {
                 {null, null, null}
             },
             new String [] {
-                "Dish Name", "Description", "Amount"
+                "Item", "Description", "Price"
             }
         ) {
             Class[] types = new Class [] {
@@ -161,7 +158,7 @@ public class MenuPanel extends javax.swing.JPanel {
                 {null, null, null}
             },
             new String [] {
-                "Dish Name", "Description", "Amount"
+                "Item", "Description", "Price"
             }
         ) {
             Class[] types = new Class [] {
@@ -191,7 +188,7 @@ public class MenuPanel extends javax.swing.JPanel {
         });
         add(orderBtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 490, -1, -1));
 
-        RemoveBtn.setText("Remove From Cart");
+        RemoveBtn.setText("Remove From Order");
         RemoveBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 RemoveBtnActionPerformed(evt);
@@ -213,7 +210,7 @@ public class MenuPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null,"Please select a row from the table to view details","Warning",JOptionPane.WARNING_MESSAGE);
         }
         else{
-            Dishes item=(Dishes)menuTable.getValueAt(selectedRow, 0);
+            FoodItems item=(FoodItems)menuTable.getValueAt(selectedRow, 0);
             
             populateCart(item);
           
@@ -256,12 +253,12 @@ public class MenuPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null,"Please select a row from the table to view details","Warning",JOptionPane.WARNING_MESSAGE);
         }
         else{
-            Dishes item=(Dishes)cartTable.getValueAt(selectedRow, 0);
+            FoodItems item=(FoodItems)cartTable.getValueAt(selectedRow, 0);
             items.remove(item);
             DefaultTableModel model = (DefaultTableModel) cartTable.getModel();
         model.setRowCount(0);
             Object[] row = new Object[3];
-                for(Dishes dish:items){
+                for(FoodItems dish:items){
                      row[0] = dish;
                      row[1] = dish.getDescription();
                      row[2] = dish.getPrice();

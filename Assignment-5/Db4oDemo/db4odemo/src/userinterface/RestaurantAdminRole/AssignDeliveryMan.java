@@ -15,10 +15,6 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author monal
- */
 public class AssignDeliveryMan extends javax.swing.JPanel {
 
     /**

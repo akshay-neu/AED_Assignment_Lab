@@ -15,10 +15,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author monal
- */
+
 public class ManageCustomersJPanel extends javax.swing.JPanel {
 
     /**
@@ -75,8 +72,10 @@ public class ManageCustomersJPanel extends javax.swing.JPanel {
         deleteBtn = new javax.swing.JButton();
         ConfirmBtn = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(204, 204, 204));
+        setPreferredSize(new java.awt.Dimension(400, 300));
 
         networkJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -152,6 +151,8 @@ public class ManageCustomersJPanel extends javax.swing.JPanel {
 
         jLabel5.setText("Username");
 
+        jLabel1.setText("Manage Customers");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -181,13 +182,18 @@ public class ManageCustomersJPanel extends javax.swing.JPanel {
                                     .addComponent(nameJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(68, 68, 68)
-                        .addComponent(backJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(backJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addComponent(jLabel1)))
                 .addContainerGap(238, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(44, 44, 44)
+                .addGap(10, 10, 10)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -300,6 +306,7 @@ public class ManageCustomersJPanel extends javax.swing.JPanel {
     private javax.swing.JPasswordField PasswordField;
     private javax.swing.JButton backJButton;
     private javax.swing.JButton deleteBtn;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

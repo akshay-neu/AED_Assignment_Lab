@@ -11,29 +11,22 @@ import Business.Restaurant.RestaurantDirectory;
 import Business.Role.Role;
 import java.util.ArrayList;
 
-/**
- *
- * @author monal
- */
+
 public class UserAccountDirectory {
    //private RestaurantDirectory resDir;
     private ArrayList<UserAccount> userAccountList;
 
     public UserAccountDirectory() {
-        userAccountList = new ArrayList();
-    }
+        userAccountList = new ArrayList();}
 
     public ArrayList<UserAccount> getUserAccountList() {
-        return userAccountList;
-    }
+        return userAccountList;}
     
     public UserAccount authenticateUser(String username, String password){
         for (UserAccount ua : userAccountList)
             if (ua.getUsername().equals(username) && ua.getPassword().equals(password)){
-                return ua;
-            }
-        return null;
-    }
+                return ua;}
+        return null;}
     
     public UserAccount createUserAccount(String name,String username, String password, Employee employee, Role role){
         UserAccount userAccount = new UserAccount();
@@ -43,25 +36,20 @@ public class UserAccountDirectory {
         userAccount.setEmployee(employee);
         userAccount.setRole(role);
         userAccountList.add(userAccount);   
-        return userAccount;
-    }
+        return userAccount;}
     
     public void deleteUserAccount(UserAccount user){
-        userAccountList.remove(user);
-    }
+        userAccountList.remove(user);}
     
     public void updateUserAccount(UserAccount user,String name,String username, String password){
-       
         user.setName(name);
         user.setUsername(username);
-        user.setPassword(password);
-    }
+        user.setPassword(password);}
     
     public boolean checkIfUsernameIsUnique(String username){
         for (UserAccount ua : userAccountList){
             if (ua.getUsername().equals(username))
-                return false;
-        }
+                return false;}
         return true;
     }
 }

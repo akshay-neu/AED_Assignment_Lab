@@ -11,10 +11,7 @@ import Business.UserAccount.UserAccount;
 import userinterface.RestaurantAdminRole.AdminWorkAreaJPanel;
 import javax.swing.JPanel;
 
-/**
- *
- * @author monal
- */
+
 public class AdminRole extends Role{
 
     @Override

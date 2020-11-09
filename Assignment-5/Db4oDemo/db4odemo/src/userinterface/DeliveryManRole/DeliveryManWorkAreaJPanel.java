@@ -15,10 +15,7 @@ import java.awt.CardLayout;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author monal
- */
+
 public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
 
     private JPanel userProcessContainer;

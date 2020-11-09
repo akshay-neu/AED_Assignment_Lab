@@ -8,7 +8,7 @@ package userinterface.RestaurantAdminRole;
 import Business.Customer.Customer;
 import Business.EcoSystem;
 import Business.Order.Order;
-import Business.Restaurant.Dishes;
+import Business.Restaurant.FoodItems;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.awt.Component;
@@ -16,10 +16,7 @@ import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 import userinterface.CustomerRole.CustomerAreaJPanel;
 
-/**
- *
- * @author monal
- */
+
 public class OrderDetails extends javax.swing.JPanel {
 
     /**
@@ -45,7 +42,7 @@ public class OrderDetails extends javax.swing.JPanel {
         
          
          Object[] row = new Object[3];
-                for(Dishes dish:order.getOrder()){
+                for(FoodItems dish:order.getOrder()){
                      row[0] = dish;
                      row[1] = dish.getDescription();
                      row[2] = dish.getPrice();
@@ -79,7 +76,7 @@ public class OrderDetails extends javax.swing.JPanel {
                 {null, null, null}
             },
             new String [] {
-                "Dish Name", "Description", "Amount"
+                "Item Name", "Description", "Price"
             }
         ) {
             Class[] types = new Class [] {

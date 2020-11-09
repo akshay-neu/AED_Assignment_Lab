@@ -17,10 +17,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author monal
- */
+
 public class ManageRestaurantsJPanel extends javax.swing.JPanel {
 
     /**
@@ -52,7 +49,6 @@ public class ManageRestaurantsJPanel extends javax.swing.JPanel {
         networkJTable = new javax.swing.JTable();
         nameJTextField = new javax.swing.JTextField();
         backJButton = new javax.swing.JButton();
-        submitJButton = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         uNameTextField = new javax.swing.JTextField();
@@ -62,8 +58,10 @@ public class ManageRestaurantsJPanel extends javax.swing.JPanel {
         deleteBtn = new javax.swing.JButton();
         ConfirmBtn = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(204, 204, 204));
+        setPreferredSize(new java.awt.Dimension(400, 300));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         networkJTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -94,7 +92,7 @@ public class ManageRestaurantsJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(networkJTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 500, 120));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 500, 120));
         add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 240, 144, -1));
 
         backJButton.setText("<< Back");
@@ -103,15 +101,7 @@ public class ManageRestaurantsJPanel extends javax.swing.JPanel {
                 backJButtonActionPerformed(evt);
             }
         });
-        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 440, -1, -1));
-
-        submitJButton.setText("Submit");
-        submitJButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                submitJButtonActionPerformed(evt);
-            }
-        });
-        add(submitJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 390, 90, -1));
+        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 490, -1, -1));
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 585, -1, -1));
@@ -136,7 +126,7 @@ public class ManageRestaurantsJPanel extends javax.swing.JPanel {
                 updateBtnActionPerformed(evt);
             }
         });
-        add(updateBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, 120, -1));
+        add(updateBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, 120, -1));
 
         deleteBtn.setText("Delete");
         deleteBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -144,7 +134,7 @@ public class ManageRestaurantsJPanel extends javax.swing.JPanel {
                 deleteBtnActionPerformed(evt);
             }
         });
-        add(deleteBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 180, 130, -1));
+        add(deleteBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 190, 130, -1));
 
         ConfirmBtn.setText("Save");
         ConfirmBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -152,13 +142,22 @@ public class ManageRestaurantsJPanel extends javax.swing.JPanel {
                 ConfirmBtnActionPerformed(evt);
             }
         });
-        add(ConfirmBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(415, 180, 120, -1));
+        add(ConfirmBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 380, 120, -1));
 
         jLabel5.setText("Username");
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, -1, 20));
+
+        jLabel1.setText("Manage Restaurants");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
+         ManageRestaurantScreenJPanel manageCustomerScreenJPanel=new ManageRestaurantScreenJPanel(userProcessContainer, system);
+        userProcessContainer.add("ManageRestaurantScreenJPanel",manageCustomerScreenJPanel);
+        CardLayout layout=(CardLayout)userProcessContainer.getLayout();
+        layout.next(userProcessContainer);      
+
+        /*
         userProcessContainer.remove(this);
         Component[] componentArray = userProcessContainer.getComponents();
         Component component = componentArray[componentArray.length - 1];
@@ -166,20 +165,8 @@ public class ManageRestaurantsJPanel extends javax.swing.JPanel {
         sysAdminwjp.populateTree();
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
+        */
     }//GEN-LAST:event_backJButtonActionPerformed
-
-    private void submitJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitJButtonActionPerformed
-
-        String name = nameJTextField.getText();
-        String uname=uNameTextField.getText();
-        String password=PasswordField.getText();
-        UserAccount ua1 =system.getUserAccountDirectory().createUserAccount(name,uname,password, null, new AdminRole());
-        Restaurant restro= system.getRestaurantDirectory().createRestaurantInfo(uname);
-        populateNetworkTable();
-        nameJTextField.setText("");
-        uNameTextField.setText("");
-        PasswordField.setText("");
-    }//GEN-LAST:event_submitJButtonActionPerformed
 
     private void PasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PasswordFieldActionPerformed
         // TODO add your handling code here:
@@ -267,6 +254,7 @@ public class ManageRestaurantsJPanel extends javax.swing.JPanel {
     private javax.swing.JPasswordField PasswordField;
     private javax.swing.JButton backJButton;
     private javax.swing.JButton deleteBtn;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -274,7 +262,6 @@ public class ManageRestaurantsJPanel extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField nameJTextField;
     private javax.swing.JTable networkJTable;
-    private javax.swing.JButton submitJButton;
     private javax.swing.JTextField uNameTextField;
     private javax.swing.JButton updateBtn;
     // End of variables declaration//GEN-END:variables

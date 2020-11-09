@@ -9,10 +9,7 @@ import java.awt.CardLayout;
 import javax.swing.JPanel;
 import userinterface.SystemAdminWorkArea.ManageRestaurantsJPanel;
 
-/**
- *
- * @author  monal
- */
+
 public class AdminWorkAreaJPanel extends javax.swing.JPanel {
     
     JPanel userProcessContainer;
