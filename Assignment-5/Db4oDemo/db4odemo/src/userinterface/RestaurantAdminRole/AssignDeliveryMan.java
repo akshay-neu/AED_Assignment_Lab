@@ -132,7 +132,7 @@ public class AssignDeliveryMan extends javax.swing.JPanel {
     private void AssignOrderBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AssignOrderBtnActionPerformed
         int selectedRow = DeliveryManJTable.getSelectedRow();
         if(selectedRow<0){
-            JOptionPane.showMessageDialog(null,"Please select a row from the table to view details","Warning",JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null,"First please select a row!","Warning",JOptionPane.WARNING_MESSAGE);
         }
         else
         {
@@ -140,6 +140,7 @@ public class AssignDeliveryMan extends javax.swing.JPanel {
             DeliveryMan deliveryMan  = (DeliveryMan)DeliveryManJTable.getValueAt(selectedRow, 0);   
             deliveryMan.getOrderList().add(order);
             order.setStatus("Assign to Deliveryman");
+             JOptionPane.showMessageDialog(null,"Order has been assigned to the delivery man!");
             
             
         }

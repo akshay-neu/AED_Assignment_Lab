@@ -38,7 +38,7 @@
         <Component class="javax.swing.JTable" name="restaurentTable">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="3" rowCount="4">
+              <Table columnCount="3" rowCount="0">
                 <Column editable="false" title="Restaurent Name" type="java.lang.String"/>
                 <Column editable="false" title="Address" type="java.lang.String"/>
                 <Column editable="false" title="Id" type="java.lang.String"/>
@@ -140,7 +140,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Lucida Grande" size="18" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Your Past Orders"/>
+        <Property name="text" type="java.lang.String" value="Previous Orders"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -163,7 +163,7 @@
         <Component class="javax.swing.JTable" name="pastTbl">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="4" rowCount="4">
+              <Table columnCount="4" rowCount="0">
                 <Column editable="false" title="Order ID" type="java.lang.String"/>
                 <Column editable="false" title="Restaurent Name" type="java.lang.String"/>
                 <Column editable="true" title="Amount" type="java.lang.String"/>

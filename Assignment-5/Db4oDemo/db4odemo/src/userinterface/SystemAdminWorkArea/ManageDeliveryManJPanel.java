@@ -140,7 +140,7 @@ public class ManageDeliveryManJPanel extends javax.swing.JPanel {
         });
         add(PasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 290, 144, -1));
 
-        jLabel1.setText("jLabel1");
+        jLabel1.setText("Manage Delivery Man");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 

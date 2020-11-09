@@ -127,9 +127,15 @@ public class MainJFrame extends javax.swing.JFrame {
         // Get user name
          UserAccount ua = system.getUserAccountDirectory().authenticateUser(userNameJTextField.getText(), passwordField.getText());        
          CardLayout layout = (CardLayout) container.getLayout();
-        container.add(ua.getRole().createWorkArea(container, ua, system));
+        if(ua != null){
+         container.add(ua.getRole().createWorkArea(container, ua, system));
         layout.next(container);
         logoutJButton.setEnabled(true);
+        }
+        else{
+                JOptionPane.showMessageDialog(null,"Incorrect Credentials!");
+        
+        }
     }//GEN-LAST:event_loginJButtonActionPerformed
 
     private void logoutJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutJButtonActionPerformed
